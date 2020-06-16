@@ -15,7 +15,10 @@ services:
     stdin_open: true
     environment: 
       - 'DATABASE_PASSWORD=postgres'
-    command: python3 manage.py runserver '0.0.0.0:8000'
+    command: python manage.py runserver '0.0.0.0:8000'
+    environment: 
+      - DEBUG=1
+      #- SECRET_KEY="x)ppfin8=!r0_z%pj4+i@#xwjg7_w)4kjgszsg$!7=b6&c&lr7"
     depends_on:
       - db
     links: 
